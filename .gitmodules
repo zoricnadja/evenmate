@@ -4,3 +4,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:kzi-nastava/iks-project-event-planner-siit-2024-team-16.git
+[submodule "android"]
+	path = android
+	url = git@github.com:kzi-nastava/ma-project-event-planner-siit-2024-team-16.git
