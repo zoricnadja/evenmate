@@ -1,0 +1,3 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:kzi-nastava/iss-project-event-planner-siit-2024-team-16.git
