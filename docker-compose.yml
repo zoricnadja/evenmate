@@ -19,3 +19,18 @@ services:
     volumes:
       - ./backend:/app
       - /root/.m2
+
+  db:
+    container_name: db-evenmate
+    image: postgres:17.2-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
