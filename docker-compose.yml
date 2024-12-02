@@ -19,6 +19,9 @@ services:
     volumes:
       - ./backend:/app
       - /root/.m2
+    depends_on:
+      db:
+        condition: service_healthy
 
   db:
     container_name: db-evenmate
@@ -31,6 +34,11 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
 
   pgadmin:
     container_name: pgadmin-evenmate
