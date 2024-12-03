@@ -1,0 +1,56 @@
+services:
+  frontend:
+    container_name: frontend-evenmate
+    build: frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+
+  backend:
+    container_name: backend-evenmate
+    build: backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/app
+      - /root/.m2
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    container_name: db-evenmate
+    image: postgres:17.2-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  pgadmin:
+    container_name: pgadmin-evenmate
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  postgres-data:
+  pgadmin-data:
