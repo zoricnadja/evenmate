@@ -19,10 +19,10 @@ services:
     volumes:
       - ./backend:/app
       - /root/.m2
-    # environment:
-    #   - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
-    #   - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
-    #   - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
     depends_on:
       db:
         condition: service_healthy
