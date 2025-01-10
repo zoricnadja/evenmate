@@ -19,10 +19,14 @@ services:
     build: backend
     ports:
       - "8080:8080"
+      - "5005:5005"
     volumes:
       - ./backend:/app
-      - /root/.m2
+      - maven-repo:/root/.m2
     environment:
+      - SPRING_DEVTOOLS_REMOTE_SECRET=${SPRING_DEVTOOLS_REMOTE_SECRET}
+      - SPRING_DEVTOOLS_RESTART_ENABLED=true
+      - SPRING_DEVTOOLS_LIVERELOAD_ENABLED=true
       - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
       - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
       - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
@@ -72,3 +76,4 @@ services:
 volumes:
   postgres-data:
   pgadmin-data:
+  maven-repo:
