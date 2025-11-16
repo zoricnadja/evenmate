@@ -1,12 +1,12 @@
 [submodule "backend"]
 	path = backend
-	url = git@github.com:kzi-nastava/iss-project-event-planner-siit-2024-team-16.git
+	url = git@github.com:DamjanVincic/evenmate-backend.git
 	branch = main
 [submodule "frontend"]
 	path = frontend
-	url = git@github.com:kzi-nastava/iks-project-event-planner-siit-2024-team-16.git
+	url = git@github.com:DamjanVincic/evenmate-frontend.git
 	branch = main
 [submodule "android"]
 	path = android
-	url = git@github.com:kzi-nastava/ma-project-event-planner-siit-2024-team-16.git
+	url = git@github.com:DamjanVincic/evenmate-android.git
 	branch = main
