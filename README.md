@@ -215,4 +215,10 @@ Routes
 - Optional extras may require custom setup inside containers.
 
 ---
+## Contributors 
+Nadja Zoric
+
+Damjan Vincic
+
+Andjela Ristic
 
