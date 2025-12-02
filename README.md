@@ -2,7 +2,7 @@
 
 An event planner app for **Software Engineering and Information Technologies** course at **Faculty of Technical Sciences**, Novi Sad, Serbia, 2024.
 
-EventMate is a modern web and mobile application designed to streamline planning, organizing, and managing events of all types—including graduations, birthdays, weddings, conferences, team buildings, and more.
+Evenmate is a modern web and mobile application designed to streamline planning, organizing, and managing events of all types—including graduations, birthdays, weddings, conferences, team buildings, and more.
 
 ---
 
@@ -20,7 +20,7 @@ EventMate is a modern web and mobile application designed to streamline planning
 
 ## Project Overview
 
-**EventMate** aims to offer an interactive platform for users to organize their events, discover and book services/products, manage budgets and agendas, and facilitate real-time communication among all involved parties.
+**Evenmate** aims to offer an interactive platform for users to organize their events, discover and book services/products, manage budgets and agendas, and facilitate real-time communication among all involved parties.
 
 ---
 
@@ -39,7 +39,7 @@ EventMate is a modern web and mobile application designed to streamline planning
 
 ## User Roles
 
-EventMate supports the following roles:
+Evenmate supports the following roles:
 
 - **Unauthenticated User** (NK):  
   Can browse public events, services, and products. Limited access.  
